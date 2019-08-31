@@ -30,3 +30,5 @@ yarn build
 - Babel(es6/7)
 - SASS
 - Autoprefixing and minifying with postcss
+
+demo : https://krowli.github.io/MapMarkerBox/
