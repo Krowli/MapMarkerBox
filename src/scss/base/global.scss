@@ -1,0 +1,289 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Roboto', serif
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.color {
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+	display: inline-block;
+	cursor: pointer;
+	clip-path: circle(75%);
+	transition: clip-path 1s;
+}
+
+:root {
+	--main-red: red;
+	--main-black: black;
+	--main-gray: gray;
+	--main-lime: lime;
+	--main-orange: orange;
+	--main-coral: coral;
+	--main-green: green;
+}
+
+/* 0 – black, 1 – gray, 2 – red, 3 – orange, 4 – lime, 5 – green */
+
+.color:hover {
+	clip-path: circle(25%);
+}
+
+#black {
+	background: var(--main-black);
+}
+
+#red {
+	background: var(--main-red);
+}
+
+#gray {
+	background: var(--main-gray);
+}
+
+#orange {
+	background: var(--main-orange);
+}
+
+#lime {
+	background: var(--main-lime);
+}
+
+#green {
+	background: var(--main-green);
+}
+
+
+.black {
+	color: var(--main-black);
+}
+
+.red {
+	color: var(--main-red);
+}
+
+.gray {
+	color: var(--main-gray);
+}
+
+.orange {
+	color: var(--main-orange);
+}
+
+.lime {
+	color: var(--main-lime);
+}
+
+.green {
+	color: var(--main-green);
+}
+
+
+
+#map {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.mapboxgl-popup {
+	max-width: 400px;
+	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-canvas {
+	cursor: all-scroll;
+}
+
+#info {
+	display: block;
+	position: relative;
+	margin: 0px auto;
+	width: 50%;
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	font-size: 12px;
+	text-align: center;
+	color: #222;
+	background: #fff;
+}
+
+#markers {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: absolute;
+	margin: 0px auto;
+	height: 300px;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	font-size: 12px;
+	text-align: center;
+	color: #222;
+	background: #fff;
+}
+
+.container--right {
+	display: none;
+	height: 100%;
+	max-height: 600px;
+	min-width: 320px;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: absolute;
+	margin: 0px auto;
+	height: 300px;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	font-size: 12px;
+	text-align: center;
+	color: #222;
+	background: #fff;
+}
+
+.container--right textarea {
+	height: 100%;
+	width: 100%;
+}
+
+.wrapper--center {
+	text-align: center;
+}
+
+#remove-marker {
+	color: #fff !important;
+	position: relative;
+	display: block;
+
+	font-size: 18px;
+	background-color: var(--main-red);
+	margin: 5px 15px;
+	padding: 15px;
+}
+
+#remove-marker:hover {
+	font-weight: bold;
+	cursor: pointer;
+	-webkit-box-shadow: 5px 4px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 5px 4px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 5px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#remove-marker:hover {
+	color: blue;
+}
+
+.places {
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+.places::after {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 25px;
+	background: #343332;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.coordinates {
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	position: absolute;
+	bottom: 40px;
+	left: 10px;
+	padding: 5px 10px;
+	margin: 0;
+	font-size: 11px;
+	line-height: 18px;
+	border-radius: 3px;
+	display: none;
+}
+
+.color-counter {
+	margin: 0px 15px;
+}
+
+.color-counter .number,
+.color-counter .count {
+
+	font-size: 22px;
+	margin: 0px 7px;
+	text-align: left;
+}
+
+#export {
+	top: 140px;
+	left: 10px;
+	z-index: 100;
+	background-color: white;
+	color: var(--main-black);
+	padding: 6px;
+	border-radius: 4px;
+
+	cursor: pointer;
+	font-size: 12px;
+	text-decoration: none;
+
+	height: 20px;
+	width: 20px;
+}
+
+
+.image-upload>input {
+	display: none;
+}
+
+.image-upload i {
+
+	cursor: pointer;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 4px 0px;
+}
+
+.wrapper>div {
+	display: inline-block;
+}
+
+.wrapper div:hover i::before,
+.wrapper button:hover i::before {
+	color: var(--main-red);
+}
+
+#dragged {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}

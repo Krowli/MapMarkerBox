@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mapbox Marker </title>
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" value="Mapbox Marker">
+	<meta name="Description"
+		content="Mapbox where you can add markers on the map, export data GeoJson, Impoer Data GeoJson, change color marker ." />
+	<!-- Open Graph data -->
+	<meta property="og:title" content="Mapbox Marker" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://lifenautjoe.github.io/webpack-starter-basic/" />
+	<meta property="og:image" content="https://krowli.com/img/icons/favicon-32x32.png" />
+	<meta property="og:description"
+		content="Mapbox where you can add markers on the map, export data GeoJson, Impoer Data GeoJson, change color marker ." />
+	<!-- Mobile header color for Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#228f20">
+	<!-- Mobile header color Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#228f20">
+	<!-- Mobile header color for iOS Safari (supports black, black-translucent or default) -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel="stylesheet" />
+	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'>
+	</script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css'
+		type='text/css' rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<style>
+
+	</style>
+	<div id='map'></div>
+	<pre id='coordinates' class='coordinates'></pre>
+	<pre id='info'></pre>
+	<div id='markers'>
+		<!-- 0 – black, 1 – gray, 2 – red, 3 – orange, 4 – lime, 5 – green  -->
+		<div class="color-counter"><span class="number">Total</span><span class="count total" data-pcount="total">0</span>
+		</div>
+		<div class="color-counter"><span class="number green">Five</span><span class="count five"
+				data-pcount="five">0</span></div>
+		<div class="color-counter"><span class="number lime">Four</span><span class="count four "
+				data-pcount="four">0</span></div>
+		<div class="color-counter"><span class="number orange">Three</span><span class="count three"
+				data-pcount="three">0</span></div>
+		<div class="color-counter"><span class="number red">Two</span><span class="count two " data-pcount="two">0</span>
+		</div>
+		<div class="color-counter"><span class="number gray">One</span><span class="count one" data-pcount="one">0</span>
+		</div>
+		<div class="color-counter"><span class="number black">Zero</span><span class="count zero"
+				data-pcount="zero">0</span></div>
+		<div class="wrapper">
+			<div class="image-upload">
+				<label for="load">
+					<i class="fa fa-upload fa-3x" aria-hidden="true"></i>
+				</label>
+				<input id="load" type="file" />
+			</div>
+			<div class="download">
+				<a href="#" id="export"><i class="fa fa-download fa-3x" aria-hidden="true"></i></a>
+			</div>
+		</div>
+		<div class="wrapper">
+			<button type="button" value="Dragged" id="dragged"><i class="fa fa-hand-rock-o fa-3x"
+					aria-hidden="true"></i></button>
+		</div>
+	</div>
+	<div class="container--right">
+		<textarea id="result">
+
+				</textarea>
+	</div>
+	</div>
+
+	</script>
+</body>
+
+</html>
