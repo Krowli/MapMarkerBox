@@ -31,4 +31,4 @@ yarn build
 - SASS
 - Autoprefixing and minifying with postcss
 
-demo : https://krowli.github.io/MapMarkerBox/
+demo : https://krowli.github.io/map-marker-box/
